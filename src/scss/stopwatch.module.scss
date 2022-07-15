@@ -1,0 +1,73 @@
+@import './app.module.scss';
+
+.stopwatch {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid black;
+
+
+
+    h2 {
+        font-size: 13px;
+    }
+
+    >div:last-of-type {
+        display: flex;
+        align-items: center;
+
+        p {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        button {
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            padding: 0px;
+            background-color: #ffffff;
+            cursor: pointer;
+
+            &:first-of-type {
+                margin: 0px 15px 0px 30px;
+
+                svg {
+                    fill: #000000;
+                    transition: fill .3s ease;
+                }
+
+                &:hover {
+                    svg {
+                        fill: #563535;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                svg {
+                    fill: #d2697a;
+                    transition: fill .3s ease;
+                }
+
+                &:hover {
+                    svg {
+                        fill: #9d3a4b;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active {
+    background-color: #fdfdf6;
+
+    h2,
+    p {
+        color: $green;
+    }
+}
