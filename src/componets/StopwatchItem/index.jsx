@@ -31,7 +31,7 @@ const Stopwatch = ({ time, id, running, name, startTime, dispatch }) => {
     const formatTime = (time) => {
         const secs = `0${Math.floor(time / 1000) % 60}`.slice(-2)
         const mins = `0${Math.floor(time / 1000 / 60) % 60}`.slice(-2)
-        const hrs = `0${Math.floor(time / 1000 / 1000 / 60) % 60}`.slice(-2)
+        const hrs = `0${Math.floor(time / 3600000) % 100}`.slice(-2)
         return `${hrs}:${mins}:${secs}`
     }
 
