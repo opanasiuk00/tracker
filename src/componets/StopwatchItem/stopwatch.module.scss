@@ -1,4 +1,4 @@
-@import './app.module.scss';
+@import '../../scss/variables';
 
 .stopwatch {
     padding: 10px;
@@ -6,12 +6,15 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    border-bottom: 1px solid black;
-
-
+    border-bottom: 1px solid $border-stopwatch;
 
     h2 {
         font-size: 13px;
+        font-weight: 400;
+        width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre;
     }
 
     >div:last-of-type {
@@ -29,33 +32,33 @@
             width: 24px;
             height: 24px;
             padding: 0px;
-            background-color: #ffffff;
+            background-color: $white;
             cursor: pointer;
 
             &:first-of-type {
                 margin: 0px 15px 0px 30px;
 
                 svg {
-                    fill: #000000;
-                    transition: fill .3s ease;
+                    fill: $black;
+                    transition: fill $duration ease;
                 }
 
                 &:hover {
                     svg {
-                        fill: #563535;
+                        fill: $stopwatch-pause-hover;
                     }
                 }
             }
 
             &:last-of-type {
                 svg {
-                    fill: #d2697a;
-                    transition: fill .3s ease;
+                    fill: $stopwatch-remove;
+                    transition: fill $duration ease;
                 }
 
                 &:hover {
                     svg {
-                        fill: #9d3a4b;
+                        fill: $stopwatch-remove-hover;
                     }
                 }
             }
@@ -63,11 +66,21 @@
     }
 }
 
+//active stopwatch
+
 .active {
-    background-color: #fdfdf6;
+    background-color: $background-active-stowawtch;
 
     h2,
     p {
         color: $green;
     }
+
+    >div:last-of-type {
+
+        button {
+            background-color: $background-active-stowawtch;
+        }
+    }
+
 }
